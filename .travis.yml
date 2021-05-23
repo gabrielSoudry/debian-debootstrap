@@ -1,4 +1,5 @@
 dist: bionic
+sudo: required
 services: docker
 language: bash
 addons:
@@ -51,7 +52,7 @@ env:
         - ARCH=mips64el INCLUDE=wget QEMU_ARCH=mipsel SUITE=bullseye UNAME_ARCH=mips64el VERSION=bullseye
         - ARCH=ppc64el INCLUDE=wget QEMU_ARCH=ppc64 SUITE=bullseye UNAME_ARCH=ppc64el VERSION=bullseye
 script:
-    - ./update.sh -a "$ARCH" -v "$VERSION" -q "$QEMU_ARCH" -u "$QEMU_VER" -d "$DOCKER_REPO" -s "$SUITE" -i "$INCLUDE" -o "$UNAME_ARCH"
+    - sudo ./update.sh -a "$ARCH" -v "$VERSION" -q "$QEMU_ARCH" -u "$QEMU_VER" -d "$DOCKER_REPO" -s "$SUITE" -i "$INCLUDE" -o "$UNAME_ARCH"
 after_success:
     - |
         if [[ $TRAVIS_BRANCH == 'master' && $TRAVIS_PULL_REQUEST == 'false' ]]; then
