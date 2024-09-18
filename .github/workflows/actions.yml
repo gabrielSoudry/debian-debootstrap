@@ -9,7 +9,7 @@ jobs:
     strategy:
       matrix:
         QEMU_VER: [v7.2.0-1]
-        DOCKER_REPO: [docker.io/multiarch/debian-debootstrap]
+        DOCKER_REPO: [gabi22top/debian-debootstrap-bookworm:armhf]
         VERSION: [bookworm]
         UNAME_ARCH: [armv7l]
         include:
