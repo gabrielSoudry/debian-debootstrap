@@ -2,7 +2,7 @@ name: actions
 on:
   push:
     branches:
-      - '**'
+      - 'main'
 jobs:
   debian-debootstrap:
     runs-on: ubuntu-latest
